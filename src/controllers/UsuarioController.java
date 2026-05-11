@@ -25,7 +25,13 @@ public class UsuarioController {
 
     // HU-13: Gestión de Usuarios - Crear
     public void crearUsuario(Usuario adminActual, String username, String password, String rol) {
-        if (!adminActual.getRol().equals("ADMIN")) throw new RuntimeException("Acceso denegado. Se requiere rol Administrador"); 
+        if (!adminActual.getRol().equals("ADMIN")) throw new RuntimeException("Acceso denegado. Se requiere rol Administrador");
+        
+        for (Usuario u : usuarios) {
+            if (u.getUsername().equals(username)) {
+                throw new RuntimeException("Nombre de usuario duplicado");
+            }
+        }
         usuarios.add(new Usuario(username, password, rol));
     }
 

@@ -8,6 +8,7 @@ public class Producto {
     private int stock;
     private int stockMinimo;
     private Categoria categoria;
+    private Proveedor proveedor;
     private boolean activo;
 
     public Producto(String codigo, String nombre, double precioCosto, double precioVenta, int stockInicial, int stockMinimo, Categoria categoria) {
@@ -18,6 +19,7 @@ public class Producto {
         this.stock = stockInicial;
         this.stockMinimo = stockMinimo;
         this.categoria = categoria;
+        this.proveedor = null;
         this.activo = true;
     }
     
@@ -49,6 +51,10 @@ public class Producto {
         return categoria; 
     }
 
+    public Proveedor getProveedor() {
+        return proveedor;
+    }
+
     public boolean isActivo() { 
         return activo; 
     }
@@ -67,5 +73,9 @@ public class Producto {
 
     public void setActivo(boolean activo) { 
         this.activo = activo;
+    }
+
+    public void setProveedor(Proveedor proveedor) {
+        this.proveedor = proveedor;
     }
 }
