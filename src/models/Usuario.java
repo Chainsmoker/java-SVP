@@ -1,13 +1,5 @@
 package models;
 
-// ============================================================
-// MODELO: USUARIO
-// Sistema de Inventario de Repuestos (SVP)
-// ============================================================
-// Representa un usuario del sistema con rol y estado.
-// Roles: ADMIN (administrador), VENDEDOR
-// ============================================================
-
 public class Usuario {
     private String username;
     private String password;

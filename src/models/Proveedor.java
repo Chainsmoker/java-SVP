@@ -1,13 +1,5 @@
 package models;
 
-// ============================================================
-// MODELO: PROVEEDOR
-// Sistema de Inventario de Repuestos (SVP)
-// ============================================================
-// Representa un proveedor de repuestos.
-// RUC: Identificador único de 11 dígitos.
-// ============================================================
-
 public class Proveedor {
     private String ruc;           // HU-09 CA-01/02: RUC único de 11 dígitos
     private String razonSocial;

@@ -2,15 +2,8 @@ package models;
 
 import java.time.LocalDateTime;
 
-// ============================================================
-// MODELO: MOVIMIENTO STOCK
-// Sistema de Inventario de Repuestos (SVP)
-// ============================================================
-// Registra movimientos de stock: ENTRADA, SALIDA, AJUSTE.
-// HU-11 CA-03: Historial es de solo lectura.
-// ============================================================
-
 public class MovimientoStock {
+    private int id;
     private LocalDateTime fecha;      // HU-11 CA-01: Fecha y hora del movimiento
     private String tipo;             // ENTRADA, SALIDA, AJUSTE - HU-11 CA-02
     private Producto producto;        // Producto afectado
@@ -18,7 +11,7 @@ public class MovimientoStock {
     private String usuarioResponsable; // Usuario que realizó la acción
     private String motivo;           // HU-14 CA-02: Motivo del ajuste (min 10 chars)
 
-    public MovimientoStock(String tipo, Producto producto, int cantidad, 
+    public MovimientoStock(String tipo, Producto producto, int cantidad,
                           String usuarioResponsable, String motivo) {
         this.fecha = LocalDateTime.now();  // Timestamp automático
         this.tipo = tipo;
@@ -27,19 +20,31 @@ public class MovimientoStock {
         this.usuarioResponsable = usuarioResponsable;
         this.motivo = motivo;              // HU-14 CA-02: Validado en controller
     }
-    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setFecha(LocalDateTime fecha) {
+        this.fecha = fecha;
+    }
+
     // HU-10 CA-01: Mostrar tipo de movimiento en reportes
-    public String getTipo() { 
-        return tipo; 
+    public String getTipo() {
+        return tipo;
     }
 
     // HU-15: Contar unidades vendidas por producto
-    public int getCantidad() { 
-        return cantidad; 
+    public int getCantidad() {
+        return cantidad;
     }
 
-    public Producto getProducto() { 
-        return producto; 
+    public Producto getProducto() {
+        return producto;
     }
 
     // HU-11 CA-01: Filtro por rango de fechas
