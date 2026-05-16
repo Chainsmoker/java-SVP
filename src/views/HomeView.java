@@ -48,11 +48,11 @@ public class HomeView extends JPanel {
         panelCards.setBackground(Color.WHITE);
 
         panelCards.add(crearCard("Inventario", "Gestionar productos", new Color(6, 90, 130), "productos"));
-        panelCards.add(crearCard("Stock", "Movimientos de inventario", new Color(60, 140, 80), "movimientos"));
-        panelCards.add(crearCard("Reportes", "Ver reportes y estadísticas", new Color(100, 80, 160), "reportes"));
         panelCards.add(crearCard("Categorías", "Administrar categorías", new Color(200, 100, 50), "categorias"));
         panelCards.add(crearCard("Proveedores", "Gestionar proveedores", new Color(80, 120, 180), "proveedores"));
         panelCards.add(crearCard("Usuarios", "Administrar usuarios", new Color(160, 80, 140), "usuarios"));
+        panelCards.add(new JPanel());
+        panelCards.add(new JPanel());
 
         add(panelCards, BorderLayout.CENTER);
     }
