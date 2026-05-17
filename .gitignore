@@ -2,6 +2,5 @@ bin/
 lib/
 *.jar
 *.class
-schema.sql
 clean_data.sql
 claves.txt
